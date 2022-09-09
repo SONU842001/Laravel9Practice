@@ -47,11 +47,11 @@
                                     </div>
                                 </div>
 
-                                {{-- <div class="form-group mb-3 row">
+                                <div class="form-group mb-3 row">
                                     <div class="col-12">
                                         <input class="form-control" id="username" type="text" name="username" required="" placeholder="UserName">
                                     </div>
-                                </div> --}}
+                                </div>
 
 
                                 <div class="form-group mb-3 row">
