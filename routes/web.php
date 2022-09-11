@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\adminController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeslideController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.index');
 });
 
+//admin all routes
 
 Route::controller(adminController::class)->group(function () {
     Route::get('/admin/logout', 'destroy')->name('admin.logout');
@@ -29,6 +31,19 @@ Route::controller(adminController::class)->group(function () {
     Route::post('/password/update', 'UpdatePassword')->name('admin.password.update');
 
 });
+
+
+//homeslides all routes
+Route::controller(HomeslideController::class)->group(function () {
+    Route::get('/home/slide', 'homeSlider')->name('home.slide');
+
+
+});
+
+
+
+
+
 
 
 Route::get('/dashboard', function () {
