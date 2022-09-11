@@ -12,8 +12,13 @@
 
             <h4 class="card-title">Home slide Page </h4>
 
-            <form method="post" action="{{ route('admin.profile.update') }}" enctype="multipart/form-data">
+            <form method="post" action="{{ route('update.slider') }}" enctype="multipart/form-data">
                 @csrf
+
+{{-- // important new concept for id passing --}}
+                <input type="hidden" name="id" value="{{ $homeslide->id }}">
+
+
 
             <div class="row mb-3">
                 <label for="example-text-input" class="col-sm-2 col-form-label">Title</label>
@@ -52,7 +57,7 @@
               <div class="row mb-3">
                  <label for="example-text-input" class="col-sm-2 col-form-label">  </label>
                 <div class="col-sm-10">
-                    <img id="showImage" class="rounded avatar-lg" src="{{ (!empty($homeslide->home_slide))? url('upload/home_slide/'.$homeslide->home_slide): url('upload/default_image.jpeg') }}" alt="Card image cap">
+                    <img id="showImage" class="rounded avatar-lg" src="{{ (!empty($homeslide->home_slides))? url($homeslide->home_slides): url('upload/default_image.jpeg') }}" alt="Card image cap">
                 </div>
             </div>
             <!-- end row -->
